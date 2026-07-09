@@ -13,6 +13,7 @@
     <maven.compiler.target>21</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <cucumber-java.version>7.34.4</cucumber-java.version>
+    <testNg.version>7.9.0</testNg.version>
   </properties>
 
   <dependencies>
@@ -21,6 +22,14 @@
       <artifactId>cucumber-java</artifactId>
       <version>${cucumber-java.version}</version>
       <scope>test</scope>
+    </dependency>
+
+    <!-- Source: https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-testng</artifactId>
+      <version>7.34.4</version>
+      <scope>compile</scope>
     </dependency>
   </dependencies>
 
