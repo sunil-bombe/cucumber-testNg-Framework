@@ -1,7 +1,10 @@
 package com.webwork.stepdefs;
 
-import com.webwork.utils.TestContextSetup;
+import com.webwork.constants.GlobalConstants;
+import com.webwork.context.TestContextSetup;
+import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import java.io.IOException;
 
 public class Hooks {
 
@@ -12,12 +15,13 @@ public class Hooks {
   }
 
   @Before()
-  public void beforeScenario() {
-    System.out.println("Before scenario");
+  public void beforeScenario() throws IOException {
+    var url = testContextSetup.propertyFileUtils.getPropertyValue(GlobalConstants.GLOBAL_CONFIG_PROPERTIES_FILE_NAME, GlobalConstants.BROWSER_NAME_KEY);
+    testContextSetup.webDriverManager.getWebDriver().get("https://opensource-demo.orangehrmlive.com");
   }
 
-  @Before()
+  @After()
   public void afterScenario() {
-    System.out.println("After scenario");
+    testContextSetup.webDriverManager.quitDriver();
   }
 }
