@@ -12,25 +12,37 @@
     <maven.compiler.source>21</maven.compiler.source>
     <maven.compiler.target>21</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <cucumber-java.version>7.34.4</cucumber-java.version>
-    <testNg.version>7.9.0</testNg.version>
+    <cucumber.version>7.34.4</cucumber.version>
+    <selenium.version>4.34.0</selenium.version>
   </properties>
 
   <dependencies>
     <dependency>
       <groupId>io.cucumber</groupId>
       <artifactId>cucumber-java</artifactId>
-      <version>${cucumber-java.version}</version>
-      <scope>test</scope>
+      <version>${cucumber.version}</version>
     </dependency>
 
-    <!-- Source: https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
     <dependency>
       <groupId>io.cucumber</groupId>
       <artifactId>cucumber-testng</artifactId>
-      <version>7.34.4</version>
+      <version>${cucumber.version}</version>
       <scope>compile</scope>
     </dependency>
+
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-picocontainer</artifactId>
+      <version>${cucumber.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-java</artifactId>
+      <version>${selenium.version}</version>
+    </dependency>
+
   </dependencies>
 
 </project>
